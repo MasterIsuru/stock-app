@@ -1,0 +1,92 @@
+html {
+  font: 0.75em/1.5 sans-serif;
+  color: #333;
+  background-color: #fff;
+  padding: 1em;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  margin-bottom: 1em;
+  border-collapse: collapse;
+}
+th {
+  font-weight: bold;
+  background-color: #ddd;
+  text-align: left;
+}
+th,
+td {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Select */
+.ticker-select {
+  position: relative;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+.ticker-select:after {
+  content: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  font: 9px "Consolas", monospace;
+  color: #333;
+  right: 0px;
+  top: 5px;
+  height: 23px;
+  background-color: #eeeeee;
+  padding: 0 4px 0 4px;
+  border: 1px solid #cccccc;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ticker-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: 25px;
+  float: right;
+  margin: 5px 0px;
+  padding: 0px 0px 0px 8px;
+  font-size: 12px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+
+.stock-container {
+  margin: 50px;
+  padding: 50px;
+  border: 1px solid #000000;
+}
+
+.stock-input-container {
+  width: 40%;
+  display: flex;
+  order: 2;
+  padding: 20px 0;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+.stock-input-container label {
+  position: absolute;
+  top: 5px;
+}
