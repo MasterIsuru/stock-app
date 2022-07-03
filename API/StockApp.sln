@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockApp.API", "StockApp\StockApp.API.csproj", "{4FA60B80-B268-4F8A-8A66-FB6D9E120B10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockApp.Test", "StockApp.Test\StockApp.Test.csproj", "{7B8711AA-F7D7-44B2-B493-CB8FA83969BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FA60B80-B268-4F8A-8A66-FB6D9E120B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA60B80-B268-4F8A-8A66-FB6D9E120B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA60B80-B268-4F8A-8A66-FB6D9E120B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA60B80-B268-4F8A-8A66-FB6D9E120B10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B8711AA-F7D7-44B2-B493-CB8FA83969BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B8711AA-F7D7-44B2-B493-CB8FA83969BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B8711AA-F7D7-44B2-B493-CB8FA83969BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B8711AA-F7D7-44B2-B493-CB8FA83969BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B9C69B7-83A6-4807-B1F1-EF1BDB0FB594}
+	EndGlobalSection
+EndGlobal

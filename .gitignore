@@ -1,0 +1,7 @@
+/API/packages
+/API/StockApp/bin
+/API/StockApp/obj
+/API/StockApp.Test/bin
+/API/StockApp.Test/obj
+.vs
+.idea
