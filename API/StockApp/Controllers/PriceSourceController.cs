@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace StockApp.API.Controllers
 {
@@ -21,9 +22,17 @@ namespace StockApp.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<PriceSource>> GetPriceSources()
+        public async Task<IActionResult> GetPriceSources()
         {
-            return await _priceSourceRepository.Get();
+            try
+            {
+                var result = await _priceSourceRepository.Get();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, $"Internal server error: {ex.Message}");
+            }
         }
     }
 }

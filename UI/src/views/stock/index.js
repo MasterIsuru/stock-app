@@ -38,6 +38,16 @@ const Stock = () => {
   };
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      if (tickerId && priceSourceId) getStockValues(priceSourceId, tickerId);
+    }, 10000);
+    return () => {
+      clearInterval(interval);
+    };
+    // eslint-disable-next-line
+  }, [tickerId, priceSourceId]);
+
+  useEffect(() => {
     getPriceSources();
     // eslint-disable-next-line
   }, []);

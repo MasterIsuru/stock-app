@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StockApp.API.Repositories;
 using StockApp.API.Models;
+using System.Net;
 
 namespace StockApp.API.Controllers
 {
@@ -19,19 +20,43 @@ namespace StockApp.API.Controllers
             _priceSourceTickerRepository = priceSourceTickerRepository;
         }
         [HttpGet("{priceSourceId}/{tickerId}")]
-        public async Task<List<PriceSource_Ticker>> GetTickers(int priceSourceId, int tickerId)
+        public async Task<IActionResult> GetTickers(int priceSourceId, int tickerId)
         {
-            return await _priceSourceTickerRepository.Get(priceSourceId, tickerId);
+            try
+            {
+                var result = await _priceSourceTickerRepository.Get(priceSourceId, tickerId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, $"Internal server error: {ex.Message}");
+            }
         }
         [HttpPost]
-        public async Task<PriceSource_Ticker> CreatePriceSourceTicker(PriceSource_Ticker priceSource_Ticker)
+        public async Task<IActionResult> CreatePriceSourceTicker(PriceSource_Ticker priceSource_Ticker)
         {
-            return await _priceSourceTickerRepository.Create(priceSource_Ticker);
+            try
+            {
+                var result = await _priceSourceTickerRepository.Create(priceSource_Ticker);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, $"Internal server error: {ex.Message}");
+            }
         }
         [HttpGet("Generate")]
-        public async Task<String> GeneratePriceSource()
+        public async Task<IActionResult> GeneratePriceSource()
         {
-            return await _priceSourceTickerRepository.Generate();
+            try
+            {
+                var result = await _priceSourceTickerRepository.Generate();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, $"Internal server error: {ex.Message}");
+            }
         }
     }
 }

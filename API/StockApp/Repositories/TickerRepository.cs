@@ -16,7 +16,7 @@ namespace StockApp.API.Repositories
         {
             _context = context;
         }
-        public async Task<List<Ticker>> Get(int priceSourceId)
+        public async Task<IEnumerable<Ticker>> Get(int priceSourceId)
         {
             var priceSource_Tickers = _context
                 .PriceSources_Tickers

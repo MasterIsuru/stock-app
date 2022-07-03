@@ -8,6 +8,6 @@ namespace StockApp.API.Repositories
 {
     public interface ITickerRepository
     {
-        Task<List<Ticker>> Get(int priceSourceId);
+        Task<IEnumerable<Ticker>> Get(int priceSourceId);
     }
 }
